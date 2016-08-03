@@ -18,7 +18,9 @@
 </head>
 
 <body>
-  <navbar class="website-header"></navbar>
+  <navbar class="website-header">
+    Style Tag
+  </navbar>
   <div class="cart-wrapper">
     <div class="cart-container">
       <div class="col-8">
@@ -40,7 +42,7 @@
               <p>Brand</p>
             </div>
           </div>
-          <div class="cart-items-container">
+          <div class="cart-items-container" id="cart-items-container">
             <div class="cart-item">
               <div class="cart-heading-item">
                 <p>Random Product 1</p>
@@ -66,7 +68,7 @@
                 <p>5</p>
               </div>
               <div class="cart-heading-item">
-                <p>Reebok</p>
+                <p>Reebok </p>
               </div>
             </div>
           </div>
@@ -79,16 +81,16 @@
           </div>
           <div class="cart-sidebar-body">
             <div class="cart-sidebar-items">
-              <p>Sub Total</p><span>Rs 150</span>
+              <p>Sub Total</p><span id="sub-total">Rs 150</span>
             </div>
             <div class="cart-sidebar-items">
-              <p>Shipping Charge</p><span>Rs 50</span>
+              <p>Shipping Charge</p><span id="delivery-charges">Rs 50</span>
             </div>
             <div class="cart-sidebar-items">
-              <p>Service Tax</p><span>Rs 33.56</span>
+              <p>Service Tax</p><span id="service-tax">Rs 33.56</span>
             </div>
             <div class="cart-grand-total cart-sidebar-items">
-              <p>Grand Total</p><span>Rs 233.56</span>
+              <p>Grand Total</p><span id="grand-total">Rs 233.56</span>
             </div>
           </div>
           <div class="cart-checkout-container">
@@ -99,5 +101,6 @@
     </div>
   </div>
 </body>
-
+<script src="js/cart.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
 </html>

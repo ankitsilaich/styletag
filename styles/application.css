@@ -48,6 +48,8 @@ h3,p {
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  padding: 20px;
+  color: white;
+  font-weight: 700;
   background: black;
 }
