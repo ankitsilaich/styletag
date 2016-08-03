@@ -117,3 +117,8 @@
 .cart-checkout-container {
   margin-top: 15px;
 }
+ .remove-from-cart {
+   color: red;
+   float: right;
+   cursor: pointer;
+ }

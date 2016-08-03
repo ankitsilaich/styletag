@@ -43,6 +43,15 @@ h3,p {
 .m-t-10 {
   margin-top: 10px;
 }
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
 .website-header {
   position: fixed;
   top: 0;

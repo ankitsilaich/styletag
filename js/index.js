@@ -3,7 +3,7 @@
   cart.addItems(productList);
 
   function generateCartItem(product) {
-    var template = '<div class="cart-item"><div class="cart-heading-item"><p>Random Product 1</p></div><div class="cart-heading-item"><p>Rs '+product.price+'</p></div><div class="cart-heading-item"><p>'+product.quantity+'</p></div><div class="cart-heading-item"><p>'+product.brand+'<span onclick="cart.removeItem('+product.id+')">Remove</span></p></div></div>';
+    var template = '<div class="cart-item"><div class="cart-heading-item"><p>Random Product 1</p></div><div class="cart-heading-item"><p>Rs '+product.price+'</p></div><div class="cart-heading-item"><span class="m-r-5" onclick="decreaseProductQuantity('+product.id+','+product.quantity+')"><i class="fa fa-minus"></i></span><span>'+product.quantity+'</span><span class="m-l-5" onclick="increaseProductQuantity('+product.id+','+product.quantity+')"><i class="fa fa-plus"></i><span></div><div class="cart-heading-item"><p>'+product.brand+'<span  class="remove-from-cart" onclick="cart.removeItem('+product.id+')"><i class="fa fa-close"></i></span></p></div></div>';
     return template;
   }
 
@@ -32,5 +32,17 @@
     cart.subscribe(displayCartDetails);
     cart.subscribe(displayCartItems);
   }
+
+  function increaseProductQuantity(id, quantity){
+    var quantity = quantity + 1;
+    cart.changeQuantity(id, quantity);
+  };
+
+  function decreaseProductQuantity(id, quantity){
+    if(quantity > 1){
+      var quantity = quantity - 1;
+      cart.changeQuantity(id, quantity);
+    }
+  };
 
   initialize();

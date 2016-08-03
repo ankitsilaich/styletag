@@ -22,7 +22,13 @@ var styleTagCart = function(config) {
   };
 
   this.changeQuantity = function (itemId,quantity) {
-
+    if(this.searchItem(itemId) !== -1) {
+      var index = this.searchItem(itemId);
+      var newItems = this.getItems();
+      newItems[index].quantity = quantity;
+    };
+    localStorage.setItem('Products', JSON.stringify(newItems));
+    this.refresh();
   };
 
   this.subscribe = function (callback) {
@@ -69,9 +75,10 @@ var styleTagCart = function(config) {
   this.removeItem = function (itemId) {
     if(this.searchItem(itemId) !== -1) {
       var index = this.searchItem(itemId);
-      this.items.splice(index,1);
+      var newItems = this.getItems();
+      newItems.splice(index,1);
     }
-    localStorage.setItem('Products', JSON.stringify(this.items));
+    localStorage.setItem('Products', JSON.stringify(newItems));
     this.refresh();
   };
 
