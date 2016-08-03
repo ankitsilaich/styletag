@@ -7,6 +7,10 @@ var styleTagCart = function(config) {
     this.refresh();
   };
 
+  this.clearItems = function () {
+    this.items = [];
+  };
+
   this.addItems = function(items) {
     this.items = this.items.concat(items);
     localStorage.setItem('Products', JSON.stringify(this.items));
@@ -35,7 +39,7 @@ var styleTagCart = function(config) {
 
   this.getSubTotal = function() {
     var cartTotal = 0;
-    this.items.forEach(function(product){
+    this.getItems().forEach(function(product){
       var productTotal = product.price * product.quantity;
       cartTotal = cartTotal + productTotal;
     });
@@ -76,8 +80,7 @@ var styleTagCart = function(config) {
   }
 
   this.initialize = function() {
-    console.log(this.getGrandTotal());
-    console.log(this.getServiceTax());
+
   };
 
   this.initialize();

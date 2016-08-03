@@ -94,22 +94,7 @@
               <div class="col-12">
                 <p class="form-field-label"> List of saved Addresses </p>
                 <div class="address-list-container" id="address-list">
-                  <div class="col-12 address-item">
-                    <div class="col-8">
-                      <p class="address">das dsa dsa dsa dsadsa dsadsadsad dasd</p>
-                    </div>
-                    <div class="col-4">
-                      <a class="checkout-button" onclick="useAddressAction(0)">Use Address</a>
-                    </div>
-                  </div>
-                  <div class="col-12 address-item">
-                    <div class="col-8">
-                      <p class="address">das dsa dsa dsa dsadsa dsadsadsad dasd</p>
-                    </div>
-                    <div class="col-4">
-                      <a class="checkout-button">Use Address</a>
-                    </div>
-                  </div>
+                  <!-- javascript is going to add content here from localstorage -->
                 </div>
               </div>
             </div>
@@ -125,20 +110,17 @@
             <div class="cart-sidebar-items">
               <p>Product</p><span>Total</span>
             </div>
-            <div class="cart-sidebar-items">
-              <p>Random Product 1</p><span>Rs 50</span>
+            <div id="product-container">
+              <!-- dynamic content is going to be loaded here from localstorage-->
             </div>
             <div class="cart-sidebar-items">
-              <p>Random Product 2</p><span>Rs 150</span>
+              <p>Delivery Charges</p><span id="delivery-charges">Rs 50</span>
             </div>
             <div class="cart-sidebar-items">
-              <p>Delivery Charges</p><span>Rs 50</span>
-            </div>
-            <div class="cart-sidebar-items">
-              <p>Service Tax</p><span>Rs 33.56</span>
+              <p>Service Tax</p><span id="service-tax">Rs 33.56</span>
             </div>
             <div class="cart-grand-total cart-sidebar-items">
-              <p>Order Total</p><span>Rs 233.56</span>
+              <p>Order Total</p><span id="grand-total">Rs 233.56</span>
             </div>
           </div>
           <div class="cart-checkout-container checkout">
@@ -150,64 +132,7 @@
   </div>
 </body>
 <script src="js/cart.js" type="text/javascript"></script>
-<script>
-  var addressList = [{
-    firstName: "Ankit",
-    lastName : "Kumar",
-    phoneNo : "8960274028",
-    otherNo : "3213222133",
-    streetAddress : "A-91,Basant Vihar",
-    town : "Jhunjhunu",
-    state : "Rajasthan",
-    pincode : "333001",
-    landmark : "Near J.B. Shah College"
-  },
-  {
-    firstName: "Ankit",
-    lastName : "Kumar",
-    phoneNo : "8960274028",
-    otherNo : "3213222133",
-    streetAddress : "A-91,Basant Vihar",
-    town : "Jhunjhunu",
-    state : "Rajasthan",
-    pincode : "333001",
-    landmark : "Near J.B. Shah College"
-  }];
+<script src="js/config.js" type="text/javascript"></script>
+<script src="js/checkout.js" type="text/javascript"></script>
 
-  function fillform(address) {
-    document.getElementById("firstName").value = address.firstName;
-    document.getElementById("lastName").value = address.lastName;
-    document.getElementById("phoneNo").value = address.phoneNo;
-    document.getElementById("otherNo").value = address.otherNo;
-    document.getElementById("streetAddress").value = address.streetAddress;
-    document.getElementById("town").value = address.town;
-    document.getElementById("state").value = address.state;
-    document.getElementById("pincode").value = address.pincode;
-    document.getElementById("landmark").value = address.landmark;
-  }
-
-  function genrateAddressTemplate(addressLocation,index) {
-    var template = '<div class="col-12 address-item"><div class="col-8"><p class="address">'+addressLocation+'</p></div><div class="col-4"><a class="checkout-button" onclick="useAddressAction('+index+')">Use Address</a></div></div>';
-    return template;
-  }
-
-  function displaySavedLocations() {
-    addressList.forEach(function(address,index){
-      var addressLocation = generateAddressString(address);
-      var content = genrateAddressTemplate(addressLocation,index);
-      document.getElementById("address-list").innerHTML += content;
-    });
-  }
-
-  function generateAddressString(address) {
-    return address.firstName +" "+address.lastName +","+ address.phoneNo+"," + address.streetAddress;
-  }
-
-  function useAddressAction(addressId) {
-    fillform(addressList[addressId]);
-  }
-
-  displaySavedLocations();
-
-</script>
 </html>
