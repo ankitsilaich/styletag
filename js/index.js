@@ -1,5 +1,4 @@
   var cart = new styleTagCart(config);
-  // cart.clearItems();
   cart.addItems(productList);
 
   function generateCartItem(product) {

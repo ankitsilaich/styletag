@@ -82,12 +82,30 @@ var styleTagCart = function(config) {
     this.refresh();
   };
 
+  this.getTotalDiscount = function() {
+    if(this.discount){
+      var cartTotal = ((this.getSubTotal() + this.getServiceTax() + this.getDeliveryCharges()) * this.discount) / 100;
+      return Number((parseInt(cartTotal)).toFixed(1));
+    }
+    return 0;
+  };
+
   this.getGrandTotal = function () {
-    return this.getSubTotal() + this.getServiceTax() + this.getDeliveryCharges();
-  }
+    return this.getSubTotal() + this.getServiceTax() + this.getDeliveryCharges() - this.getTotalDiscount();
+  };
 
   this.initialize = function() {
 
+  };
+
+  this.applyDiscount = function(discount){
+    this.discount = discount;
+    this.refresh();
+  };
+
+  this.removeDiscount = function(){
+    this.discount = null;
+    this.refresh();
   };
 
   this.initialize();

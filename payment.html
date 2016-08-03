@@ -96,27 +96,24 @@
             <div class="cart-sidebar-items">
               <p>Product</p><span>Total</span>
             </div>
-            <div class="cart-sidebar-items">
-              <p>Random Product 1</p><span>Rs 50</span>
+            <div id="product-container">
+              <!-- dynamic content is going to be loaded here from localstorage-->
             </div>
             <div class="cart-sidebar-items">
-              <p>Random Product 2</p><span>Rs 150</span>
+              <p>Delivery Charges</p><span id="delivery-charges">Rs 50</span>
             </div>
             <div class="cart-sidebar-items">
-              <p>Delivery Charges</p><span>Rs 50</span>
-            </div>
-            <div class="cart-sidebar-items">
-              <p>Service Tax</p><span>Rs 33.56</span>
+              <p>Service Tax</p><span id="service-tax">Rs 33.56</span>
             </div>
             <div class="cart-sidebar-items" id="coupon-success">
               <p>Coupon <i id="coupon-value">STYLETAG50</i> applied</p>
               <span onclick="removeCoupon()" id="remove-button">Remove</span>
             </div>
-            <div class="cart-sidebar-items">
-              <p>Service Tax</p><span>Rs 33.56</span>
+            <div class="cart-grand-total cart-sidebar-items" id="total-discount-container">
+              <p>Discount</p><span id="total-discount">Rs 233.56</span>
             </div>
             <div class="cart-grand-total cart-sidebar-items">
-              <p>Order Total</p><span >Rs <i id="cart-total">233.56</i></span>
+              <p>Order Total</p><span id="grand-total">Rs 233.56</span>
             </div>
           </div>
           <div class="cart-checkout-container checkout">
@@ -127,40 +124,8 @@
     </div>
   </div>
 </body>
-<script>
-  var validCoupons = ['STYLETAG50','FLAT20'];
-  var couponValue;
-  var cartTotal = document.getElementById('cart-total').innerHTML;
-  function checkValidCoupon() {
-      couponValue = document.getElementById('promo-code').value;
-      if(validCoupons.indexOf(couponValue) === -1){
-        return false;
-      }
-      return true;
-  }
-  function calculateCartValue() {
-    var discount = Number(((parseInt(cartTotal) * 20)/100).toFixed(1));
-    return cartTotal - discount;
-  }
-  function applyCoupon() {
-    if(checkValidCoupon()) {
-      document.getElementById('coupon-error').style.display = 'none';
-      document.getElementById('coupon-success').style.display = 'block';
-      document.getElementById('success-message').style.display = 'block';
-      document.getElementById('coupon-value').innerHTML = couponValue;
-      document.getElementById('cart-total').innerHTML = calculateCartValue();
-
-    }else {
-      document.getElementById('coupon-error').style.display = 'block';
-    }
-  }
-  function removeCoupon() {
-      document.getElementById('coupon-success').style.display = 'none';
-      document.getElementById('coupon-value').innerHTML = couponValue;
-      document.getElementById('promo-code').value = '';
-      document.getElementById('success-message').style.display = 'none';
-      document.getElementById('cart-total').innerHTML = cartTotal;
-  }
-
-</script>
+<script src="js/cart.js" type="text/javascript"></script>
+<script src="js/config.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/payment.js" type="text/javascript"></script>
 </html>

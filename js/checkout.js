@@ -20,25 +20,12 @@ function genrateAddressTemplate(addressLocation,index) {
   return template;
 }
 
-function genrateProductTemplate(product) {
-  var template = '<div class="cart-sidebar-items"><p>'+product.name+'</p><span>Rs '+(product.price * product.quantity)+'</span></div>';
-  return template;
-}
-
 function displaySavedLocations() {
   savedLocations.forEach(function(address,index){
     var addressLocation = generateAddressString(address);
     var content = genrateAddressTemplate(addressLocation,index);
     document.getElementById("address-list").innerHTML += content;
   });
-}
-
-function displayProducts() {
-  var content = '';
-  cart.getItems().forEach(function(product){
-    content += genrateProductTemplate(product);
-  });
-  document.getElementById("product-container").innerHTML = content;
 }
 
 function generateAddressString(address) {
@@ -49,14 +36,7 @@ function useAddressAction(addressId) {
   fillform(addressList[addressId]);
 }
 
-function fillSideCartDetails() {
-  document.getElementById('grand-total').innerHTML = cart.getGrandTotal();
-  document.getElementById('service-tax').innerHTML = cart.getServiceTax();
-  document.getElementById('delivery-charges').innerHTML = cart.getDeliveryCharges();
-  displayProducts();
-}
-
-fillSideCartDetails();
 cart.subscribe(fillSideCartDetails);
 
+fillSideCartDetails();
 displaySavedLocations();
