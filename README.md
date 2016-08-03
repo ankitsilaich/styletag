@@ -1,4 +1,4 @@
-# styletag
+# STYLETAG
 
 Styletag checkout process implememtation
 

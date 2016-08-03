@@ -1,5 +1,5 @@
 var cart = new styleTagCart(config);
-if(cart.getItems().length === 0){
+if(cart.getItems() == null && cart.getItems().length === 0 ){
   cart.addItems(productList);
 }
 
