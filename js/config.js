@@ -12,11 +12,31 @@ var productList = [{
   brand: 'Puma'
 },
 {
-  id: 123,
+  id: 2,
   name: 'Random Product 2',
-  price: 200,
-  quantity: 5,
+  price: 2000,
+  quantity: 1,
+  brand: 'Nike'
+},
+{
+  id: 3,
+  name: 'Random Product 2',
+  price: 20,
+  quantity: 2,
   brand: 'Reebok'
+},
+{
+  id: 4,
+  name: 'Random Product 2',
+  price: 75,
+  quantity: 9,
+  brand: 'Adidas'
+},{
+  id: 5,
+  name: 'Random Product 2',
+  price: 130,
+  quantity: 2,
+  brand: 'Wrogn'
 }];
 
 var addressList = [{

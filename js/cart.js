@@ -9,6 +9,7 @@ var styleTagCart = function(config) {
 
   this.clearItems = function () {
     this.items = [];
+      localStorage.setItem('Products', JSON.stringify(this.items));
   };
 
   this.addItems = function(items) {

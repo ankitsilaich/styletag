@@ -26,6 +26,7 @@
 #total-discount-container {
   display: none;
 }
+
 #total-discount-container p, #total-discount-container span {
   color : green;
 }

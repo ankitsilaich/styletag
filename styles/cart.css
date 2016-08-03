@@ -94,6 +94,7 @@
   overflow: hidden;
   padding: 10px 0 7px;
 }
+
 .checkout-button {
   border: 1px solid #183152;
   color: #232323;
@@ -109,16 +110,23 @@
   background: #f7f8f9;
   cursor: pointer;
 }
+
 .checkout-button:hover {
   background: #183152;
   border: 1px solid #183152;
   color: #fff;
 }
+
 .cart-checkout-container {
   margin-top: 15px;
 }
- .remove-from-cart {
-   color: red;
-   float: right;
-   cursor: pointer;
- }
+
+.remove-from-cart {
+ color: red;
+ float: right;
+ cursor: pointer;
+}
+
+.quantity-info {
+  padding: 0 15px;
+}
