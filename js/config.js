@@ -1,3 +1,15 @@
+// Register our service-worker
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/styletag/service-worker.js', {
+        scope: '/styletag/'
+    });
+    window.addEventListener('load', function() {
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+        }
+    });
+}
+
 var config  = {
   serviceTax: 14,
   deliveryCharges: 50,
