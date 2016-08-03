@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Styletag | cart </title>
+  <meta name="description" content="Ecommerce Flow for styletag">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/application.css">
+  <link rel="stylesheet" href="styles/cart.css">
+  <link rel="stylesheet" href="styles/checkout.css">
+  <link rel="stylesheet" href="styles/payment.css">
+</head>
+
+<body>
+  <div class="cart-wrapper">
+    <div class="cart-container">
+      <div class="col-8">
+        <div class="main-cart-container no-padding">
+          <div class="cart-title checkout">
+            <h3>Select Payment Method</h3>
+          </div>
+          <div class="checkout-form-container">
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> Select payment Mode</p>
+                <div class="col-4">
+                  <input type="radio" name="gender" value="male"> Wallet<br>
+                </div>
+                <div class="col-4">
+                  <input type="radio" name="gender" value="male"> Bank<br>
+                </div>
+                <div class="col-4">
+                  <input type="radio" name="gender" value="male"> COD<br>
+                </div>
+              </div>
+              <div class="col-12">
+                <p class="form-field-label"> Credit Card Number *</p>
+                <input type="text" name="firstName" required="" placeholder="e.g. 6785-5678-5868-6789" class="form-filed-input">
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> Expiration *</p>
+                <div class="col-6 no-padding">
+                  <input type="text" name="firstName" required="" placeholder="Month" class="form-filed-input">
+                </div>
+                <div class="col-6 no-padding">
+                  <input type="text" name="firstName" required="" placeholder="Year" class="form-filed-input">
+                </div>
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> CVC / CVV *</p>
+                <input type="text" name="firstName" required="" class="form-filed-input" placeholder="3 or 4 digit code written on the back">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-cart-container m-t-10">
+          <div class="coupon-code-container">
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> Have a Promocode? Apply here! </p>
+                <div class="col-8">
+                  <input type="text" id="promo-code" name="firstName" required="" class="form-filed-input" placeholder="Enter promo code">
+                   <p id="coupon-error" class="error-message">Please enter a valid Promotional or Voucher Code.</p>
+                   <p id="success-message" class="success-message">Your coupon has been successfully applied.</p>
+                </div>
+                <div class="col-4">
+                  <a class="checkout-button" onclick="applyCoupon()">Apply</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="main-cart-container no-padding">
+          <div class="cart-sidebar-title checkout">
+            <h3>Review Your Order</h3>
+          </div>
+          <div class="cart-sidebar-body checkout">
+            <div class="cart-sidebar-items">
+              <p>Product</p><span>Total</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Random Product 1</p><span>Rs 50</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Random Product 2</p><span>Rs 150</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Delivery Charges</p><span>Rs 50</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Service Tax</p><span>Rs 33.56</span>
+            </div>
+            <div class="cart-sidebar-items" id="coupon-success">
+              <p>Coupon <i id="coupon-value">STYLETAG50</i> applied</p>
+              <span onclick="removeCoupon()" id="remove-button">Remove</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Service Tax</p><span>Rs 33.56</span>
+            </div>
+            <div class="cart-grand-total cart-sidebar-items">
+              <p>Order Total</p><span >Rs <i id="cart-total">233.56</i></span>
+            </div>
+          </div>
+          <div class="cart-checkout-container checkout">
+            <a href="payment.html" class="checkout-button" >Proceed to Pay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var validCoupons = ['STYLETAG50','FLAT20'];
+  var couponValue;
+  var cartTotal = document.getElementById('cart-total').innerHTML;
+  function checkValidCoupon() {
+      couponValue = document.getElementById('promo-code').value;
+      if(validCoupons.indexOf(couponValue) === -1){
+        return false;
+      }
+      return true;
+  }
+  function calculateCartValue() {
+    var discount = Number(((parseInt(cartTotal) * 20)/100).toFixed(1));
+    return cartTotal - discount;
+  }
+  function applyCoupon() {
+    if(checkValidCoupon()) {
+      document.getElementById('coupon-error').style.display = 'none';
+      document.getElementById('coupon-success').style.display = 'block';
+      document.getElementById('success-message').style.display = 'block';
+      document.getElementById('coupon-value').innerHTML = couponValue;
+      document.getElementById('cart-total').innerHTML = calculateCartValue();
+
+    }else {
+      document.getElementById('coupon-error').style.display = 'block';
+    }
+  }
+  function removeCoupon() {
+      document.getElementById('coupon-success').style.display = 'none';
+      document.getElementById('coupon-value').innerHTML = couponValue;
+      document.getElementById('promo-code').value = '';
+      document.getElementById('success-message').style.display = 'none';
+      document.getElementById('cart-total').innerHTML = cartTotal;
+  }
+
+</script>
+</html>

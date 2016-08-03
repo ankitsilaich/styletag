@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Styletag | cart </title>
+  <meta name="description" content="Ecommerce Flow for styletag">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/application.css">
+  <link rel="stylesheet" href="styles/cart.css">
+  <link rel="stylesheet" href="styles/checkout.css">
+</head>
+
+<body>
+  <div class="cart-wrapper">
+    <div class="cart-container">
+      <div class="col-8">
+        <div class="main-cart-container no-padding">
+          <div class="cart-title checkout">
+            <h3>Enter Address</h3>
+          </div>
+          <div class="checkout-form-container">
+            <div class="form-field-container">
+              <div class="col-6">
+                <p class="form-field-label"> First Name *</p>
+                <input type="text" id="firstName" name="firstName" required="" placeholder="e.g. john" class="form-filed-input">
+              </div>
+              <div class="col-6">
+                <p class="form-field-label"> Last Name *</p>
+                <input type="text" id="lastName" name="firstName" required="" placeholder="e.g. Smith" class="form-filed-input">
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-6">
+                <p class="form-field-label"> Contact no *</p>
+                <input type="text" id="phoneNo" name="firstName" required=""  placeholder="Your mobile number e.g. 8960274028" class="form-filed-input">
+              </div>
+              <div class="col-6">
+                <p class="form-field-label"> Other Contact No</p>
+                <input type="text" id="otherNo" name="firstName" required="" placeholder="Optional contact number" class="form-filed-input">
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> Address *</p>
+                <input type="text" id="streetAddress" name="firstName" required="" class="form-filed-input" placeholder="Your Street Address">
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-6">
+                <p class="form-field-label"> Town / city *</p>
+                <input type="text" id="town" name="firstName" required="" placeholder="e.g. Bangalore"  class="form-filed-input">
+              </div>
+              <div class="col-6">
+                <p class="form-field-label"> State </p>
+                <input type="text" id="state" name="firstName" placeholder="e.g. Karnataka"  required="" class="form-filed-input">
+              </div>
+            </div>
+            <div class="form-field-container">
+              <div class="col-6">
+                <p class="form-field-label"> Pin code / Zip *</p>
+                <input type="text" id="pincode" name="firstName" required="" placeholder="e.g. 333001"  class="form-filed-input">
+              </div>
+              <div class="col-6">
+                <p class="form-field-label"> Landmark  </p>
+                <input type="text" id="landmark" name="firstName" placeholder="If any (optional)" required="" class="form-filed-input">
+              </div>
+            </div>
+            <div class="form-field-container checkbox-container">
+              <div class="checkbox">
+                <input type="checkbox" name="firstName" required="" placeholder="e.g. 333001"  class="form-filed-input">
+              </div>
+              <div class="label-container">
+                <span class="form-field-label"> Save this address for future transactions</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="main-cart-container m-t-10">
+          <div class="coupon-code-container">
+            <div class="form-field-container">
+              <div class="col-12">
+                <p class="form-field-label"> List of saved Addresses </p>
+                <div class="address-list-container" id="address-list">
+                  <div class="col-12 address-item">
+                    <div class="col-8">
+                      <p class="address">das dsa dsa dsa dsadsa dsadsadsad dasd</p>
+                    </div>
+                    <div class="col-4">
+                      <a class="checkout-button" onclick="useAddressAction(0)">Use Address</a>
+                    </div>
+                  </div>
+                  <div class="col-12 address-item">
+                    <div class="col-8">
+                      <p class="address">das dsa dsa dsa dsadsa dsadsadsad dasd</p>
+                    </div>
+                    <div class="col-4">
+                      <a class="checkout-button">Use Address</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="main-cart-container no-padding">
+          <div class="cart-sidebar-title checkout">
+            <h3>Review Your Order</h3>
+          </div>
+          <div class="cart-sidebar-body checkout">
+            <div class="cart-sidebar-items">
+              <p>Product</p><span>Total</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Random Product 1</p><span>Rs 50</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Random Product 2</p><span>Rs 150</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Delivery Charges</p><span>Rs 50</span>
+            </div>
+            <div class="cart-sidebar-items">
+              <p>Service Tax</p><span>Rs 33.56</span>
+            </div>
+            <div class="cart-grand-total cart-sidebar-items">
+              <p>Order Total</p><span>Rs 233.56</span>
+            </div>
+          </div>
+          <div class="cart-checkout-container checkout">
+            <a href="payment.html" class="checkout-button" >Proceed to Pay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var addressList = [{
+    firstName: "Ankit",
+    lastName : "Kumar",
+    phoneNo : "8960274028",
+    otherNo : "3213222133",
+    streetAddress : "A-91,Basant Vihar",
+    town : "Jhunjhunu",
+    state : "Rajasthan",
+    pincode : "333001",
+    landmark : "Near J.B. Shah College"
+  },
+  {
+    firstName: "Ankit",
+    lastName : "Kumar",
+    phoneNo : "8960274028",
+    otherNo : "3213222133",
+    streetAddress : "A-91,Basant Vihar",
+    town : "Jhunjhunu",
+    state : "Rajasthan",
+    pincode : "333001",
+    landmark : "Near J.B. Shah College"
+  }];
+
+  function fillform(address) {
+    document.getElementById("firstName").value = address.firstName;
+    document.getElementById("lastName").value = address.lastName;
+    document.getElementById("phoneNo").value = address.phoneNo;
+    document.getElementById("otherNo").value = address.otherNo;
+    document.getElementById("streetAddress").value = address.streetAddress;
+    document.getElementById("town").value = address.town;
+    document.getElementById("state").value = address.state;
+    document.getElementById("pincode").value = address.pincode;
+    document.getElementById("landmark").value = address.landmark;
+  }
+
+  function genrateAddressTemplate(addressLocation,index) {
+    var template = '<div class="col-12 address-item"><div class="col-8"><p class="address">'+addressLocation+'</p></div><div class="col-4"><a class="checkout-button" onclick="useAddressAction('+index+')">Use Address</a></div></div>';
+    return template;
+  }
+
+  function displaySavedLocations() {
+    addressList.forEach(function(address,index){
+      var addressLocation = generateAddressString(address);
+      var content = genrateAddressTemplate(addressLocation,index);
+      document.getElementById("address-list").innerHTML += content;
+    });
+  }
+
+  function generateAddressString(address) {
+    return address.firstName +" "+address.lastName +","+ address.phoneNo+"," + address.streetAddress;
+  }
+
+  function useAddressAction(addressId) {
+    fillform(addressList[addressId]);
+  }
+
+  displaySavedLocations();
+
+</script>
+</html>

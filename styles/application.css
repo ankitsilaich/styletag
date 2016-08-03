@@ -1,0 +1,53 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #7685A4;
+    background: #ededed;
+    background-size: cover;
+}
+h3,p {
+  margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.col-8 {
+  display: block;
+  float: left;
+  width : 75%;
+}
+.col-8, .col-4, .col-6, .col-12 {
+  padding: 10px;
+}
+.col-4 {
+  display: block;
+  float: left;
+  width : 25%;
+}
+.col-6 {
+  display: block;
+  float: left;
+  width : 50%;
+}
+.col-12 {
+  float: left;
+  width: 100%;
+}
+.col-2 {
+  float: left;
+  width: 20%;
+}
+.col-10 {
+  float: left;
+  width: 80%;
+}
+.m-t-10 {
+  margin-top: 10px;
+}
+.website-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: black;
+}

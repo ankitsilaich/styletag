@@ -1,0 +1,23 @@
+.error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+.success-message {
+  color: #00B9F5;
+  margin-top: 10px;
+  display: none;
+}
+
+#coupon-success {
+  display: none;
+}
+#coupon-value {
+  color: #00B9F5;
+}
+
+#remove-button {
+  color: red;
+  cursor: pointer;
+}

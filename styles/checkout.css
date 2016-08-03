@@ -1,0 +1,71 @@
+.checkout-form-container {
+  overflow: hidden;
+  padding: 20px 20px;
+  width: 100%;
+}
+.form-field-container {
+  overflow: hidden;
+}
+.form-field-label {
+  color: #212121;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.form-filed-input {
+  background: #f7f8f9;
+  border: 1px solid #E8E8E8;
+  padding: 9px;
+  width: 100%;
+}
+
+.form-filed-input:focus {
+  outline: none;
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.cart-title.checkout {
+  padding: 10px 30px;
+  background: #183152;
+}
+
+.cart-title.checkout h3 {
+  color: white;
+}
+
+.cart-sidebar-title.checkout, .cart-sidebar-body.checkout , .cart-checkout-container.checkout {
+  padding: 10px;
+}
+
+.cart-sidebar-title.checkout {
+  padding: 10px 30px;
+  background: #183152;
+}
+
+.cart-sidebar-title.checkout h3 {
+  color : white;
+}
+
+.address-item p {
+  padding: 7px;
+  font-size: 13px;
+}
+.address-item {
+  border-bottom: 1px solid #e8eaec;
+}
+.checkbox-container {
+  margin-top: 15px;
+}
+.checkbox {
+  float: left;
+  width: 3%;
+}
+.label-contaner {
+  float: left;
+  width: 97%;
+}
