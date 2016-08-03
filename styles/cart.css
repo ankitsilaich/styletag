@@ -7,6 +7,7 @@
 .main-cart-container {
   background: #fff;
   padding: 20px;
+  box-shadow: 0 2px 64px 0 rgba(197,197,197,.5)
 }
 
 .cart-title h3 {

@@ -24,6 +24,7 @@ function applyCoupon() {
     document.getElementById('total-discount-container').style.display = 'block';
     updateCart();
   }else {
+    document.getElementById('success-message').style.display = 'none';
     document.getElementById('coupon-error').style.display = 'block';
   }
 }
