@@ -6,8 +6,8 @@ Styletag checkout process implememtation
 <a href="https://codeclimate.com/github/ankitsilaich/styletag"><img src="https://codeclimate.com/github/ankitsilaich/styletag/badges/gpa.svg" /></a>
 
 ## Demo
-[CLICK HERE (with service Workers)](https://ankitsilaich.github.io/styletag/)
-[CLICK HERE (without service Workers)](http://ankitsilaich.in/styletag)
+- [CLICK HERE (with service Workers)](https://ankitsilaich.github.io/styletag/)
+- [CLICK HERE (without service Workers)](http://ankitsilaich.in/styletag)
 
 
 ## Features
