@@ -9,15 +9,9 @@ var offlineFundamentals = [
   'styles/normalize.css',
   'styles/cart.css',
   'styles/application.css',
-  // 'css/checkout.css',
-  // 'css/payment.css',
   'js/cart.js',
   'js/config.js',
-  // 'js/common.js',
   'js/index.js',
-  // 'js/payment.js',
-  // 'js/checkout.js'
-
 ];
 
 self.addEventListener("install", function(event) {
