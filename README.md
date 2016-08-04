@@ -6,9 +6,17 @@ Styletag checkout process implememtation
 <a href="https://codeclimate.com/github/ankitsilaich/styletag"><img src="https://codeclimate.com/github/ankitsilaich/styletag/badges/gpa.svg" /></a>
 
 ## Demo
-[CLICK HERE](http://ankitsilaich.in/styletag)
+[CLICK HERE (with service Workers)](https://ankitsilaich.github.io/styletag/)
+[CLICK HERE (without service Workers)](http://ankitsilaich.in/styletag)
+
 
 ## Features
+
+### Offline Web App
+1. just visit this [Link](http://ankitsilaich.in/styletag) in any modern browser
+2. Turn off your internet connection
+3. This app works without internet as well :blush:
+
 
 ### General
 1. Cart uses localStorage to store items so changes persist even if you refresh the page.
