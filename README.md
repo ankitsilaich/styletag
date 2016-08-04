@@ -20,7 +20,7 @@ Styletag checkout process implememtation
 2. You can change product quantity in the cart.
 
 ### Checkout Page
-1. You can use previous saved addresses.
+1. You can use previously saved addresses.
 
 ### Payment Page
 1. You can use apply Coupons (Valid coupons are STYLETAG50 and FLAT20).
