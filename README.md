@@ -15,7 +15,7 @@ Styletag checkout process implememtation
 ### Offline Web App
 1. just visit this [Link](http://ankitsilaich.in/styletag) in any modern browser
 2. Turn off your internet connection
-3. This app works without internet as well :blush:
+3. This app works well without internet as well :blush:
 
 
 ### General
